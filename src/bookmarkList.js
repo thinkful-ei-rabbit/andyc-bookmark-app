@@ -12,9 +12,12 @@ const generateBookmarksList = () => {
     }
   
     return `
-    <div class="bookmarks-list">
+    <section class="bookmarks-list">
       <h1>MY BOOKMARKS</h1>
+      <div class = 'add-rating-button'>
       <button class="add-bookmark">Add Your Bookmark</button>
+      
+      <label class='minimum-rating' for='minimum-rating'>Rating:</label>
       <select name="minimum-rating" id="minimum-rating">
         <option>Minimum Rating</option>
         <option value="1">1</option>
@@ -23,9 +26,11 @@ const generateBookmarksList = () => {
         <option value="4">4</option>
         <option value="5">5</option>
       </select>
+
+      </div>
       <hr>
       ${bookmarks.join('')}
-    </div>
+    </section>
     `;
   };
   
@@ -44,7 +49,7 @@ const generateBookmarksList = () => {
     }
   
     return `
-    <div class="bookmark" data-item-id="${bookmark.id}">
+    <section class="bookmark" data-item-id="${bookmark.id}">
       <h3 class="bookmark-title">${bookmark.title}</h3>
       <p class="bookmark-description ${!bookmark.expanded ? 'bookmark-shrink':''}">${bookmark.desc === '' ? 'No description': bookmark.desc}</p>
       <a href="${bookmark.url}" target="_blank" class="bookmark-url ${!bookmark.expanded ? 'bookmark-shrink':''}">Visit Site</a>
@@ -52,7 +57,7 @@ const generateBookmarksList = () => {
       ${newRatings.join('')}
       </div>
       <button class="bookmark-delete ${!bookmark.expanded ? 'bookmark-shrink':''}">Delete</button>
-    </div>
+    </section>
     `;
   };
 
@@ -62,15 +67,22 @@ const generateBookmarksList = () => {
         <div class='form-container'>
             <h2>Create Your Bookmark</h2>
             <form class='add-form'>
+
+            <div class='first-label'>
             <label for="bookmark-title">Title:</label>
             <input type="text" name="bookmark-title" id="bookmark-title" class="data-bookmark-title" placeholder="title">
-            
+            </div>
+
+            <div class='second-label'>
             <label for="bookmark-url">URL:</label>
             <input type="text" name="bookmark-url" id="bookmark-url" class="data-bookmark-url" placeholder="URL HERE">
-            
+            </div>
+
+            <div class='third-label'>
             <label for="bookmark-url">Description:</label>
             <input type="text" name="bookmark-description" id="bookmark-description" class="data-bookmark-description" placeholder="description...">
-            
+            </div
+
             <p>Rating:</p>
             <label for="rating1">
               <input type="radio" name="rating" id="rating1" value="1" class="bookmark-rating">

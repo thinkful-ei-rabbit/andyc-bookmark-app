@@ -1,10 +1,16 @@
 main {
-    margin: 100px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 10px;
     background-color: beige;
     border: solid;
-    padding-left: 20px;
+    
+
 }
 
+.add-rating-button {
+    text-align: center;
+}
 
 h1 {
     text-align: center;
@@ -15,9 +21,13 @@ h1 {
     text-align: center;
     display: flex;
     flex-direction: column;
-    color: chocolate;
+    color: black;
     background-color: beige;
     padding: 10px;
     margin-bottom: 20px;
     font-weight: bold;
   }
+
+.minimum-rating {
+    display: none;
+}
